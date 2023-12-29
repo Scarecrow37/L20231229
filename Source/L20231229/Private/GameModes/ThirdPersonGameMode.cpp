@@ -3,3 +3,11 @@
 
 #include "GameModes/ThirdPersonGameMode.h"
 
+#include "GameModes/ThirdPersonCharacter.h"
+#include "GameModes/ThirdPersonPlayerController.h"
+
+AThirdPersonGameMode::AThirdPersonGameMode()
+{
+	PlayerControllerClass = AThirdPersonPlayerController::StaticClass();
+	DefaultPawnClass = AThirdPersonCharacter::StaticClass();
+}

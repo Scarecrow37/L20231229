@@ -13,5 +13,7 @@ UCLASS()
 class L20231229_API AThirdPersonGameMode : public AGameModeBase
 {
 	GENERATED_BODY()
-	
+
+public:
+	AThirdPersonGameMode();
 };
