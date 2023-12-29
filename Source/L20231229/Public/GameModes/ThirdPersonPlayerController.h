@@ -15,8 +15,10 @@ class L20231229_API AThirdPersonPlayerController : public APlayerController
 {
 	GENERATED_BODY()
 
+protected:
+	virtual void BeginPlay() override;
+	
 private:
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Input", meta = (AllowPrivateAccess = "true"))
 	TObjectPtr<UInputMappingContext> InputMappingContext;
-	
 };
