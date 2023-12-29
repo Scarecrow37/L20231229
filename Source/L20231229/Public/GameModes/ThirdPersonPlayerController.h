@@ -21,4 +21,7 @@ protected:
 private:
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Input", meta = (AllowPrivateAccess = "true"))
 	TObjectPtr<UInputMappingContext> InputMappingContext;
+
+private:
+	bool InitializeEnhancedInputLocalPlayerSubsystem() const;
 };

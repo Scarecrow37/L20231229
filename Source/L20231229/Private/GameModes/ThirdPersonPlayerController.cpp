@@ -8,8 +8,18 @@ void AThirdPersonPlayerController::BeginPlay()
 {
 	Super::BeginPlay();
 
+	InitializeEnhancedInputLocalPlayerSubsystem();
+}
+
+bool AThirdPersonPlayerController::InitializeEnhancedInputLocalPlayerSubsystem() const
+{
 	UEnhancedInputLocalPlayerSubsystem* EnhancedSubsystem = ULocalPlayer::GetSubsystem<
 		UEnhancedInputLocalPlayerSubsystem>(GetLocalPlayer());
 
-	EnhancedSubsystem->AddMappingContext(InputMappingContext, 0);
+	if (IsValid(EnhancedSubsystem))
+	{
+		EnhancedSubsystem->AddMappingContext(InputMappingContext, 0);
+		return true;
+	}
+	return false;
 }
